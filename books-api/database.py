@@ -89,7 +89,7 @@ def add_book(book: Book, author: Author, Session=Session):
             pairing = BookAuthor(author_id=author.author_id, book_id=book.book_id)
 
         session.add(pairing)
+        session.commit()
         # Session.begin() context commits here on success
         print("Created BookAuthor pairing:", pairing)
-        return book
       
